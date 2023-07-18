@@ -1,0 +1,202 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.error,.succ {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    border-radius: 50%;
+    display: none;
+}
+.succ {
+    background-color: green;
+    border-radius: 50%;   
+}
+.tik {
+    width: 50%;
+    height: 14px;
+    border-style: solid;
+    position: absolute;
+    transform: rotate(-45deg)translate(-50%,-50%);
+    top: 20%;
+    left: 50%;
+    border-width: 0 0 4px 4px;
+    border-color: #fff;
+}
+.bar:last-child {
+    transform: rotate(45deg);
+}
+.bar:first-child {
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+.bar {
+    display: block;
+    height: 8px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    border-radius: 10px;
+    background-color:#fff;
+}
+/* .payer {
+    position: absolute;
+    width: 50px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(19%) saturate(644%) hue-rotate(337deg) brightness(100%) contrast(100%);
+   clip-path: circle();
+    background-color: transparent;
+} */
+.wrapper {
+    width: 100%;
+    transition: 3s;
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(15, 15, 15,0.8);   
+}
+.circle{
+    width: 60px;
+    padding: 20px;
+ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.container, .confirm {
+    width: 250px;
+    padding: 20px;
+    margin:100px auto 20px;
+    background-color: rgb(15, 15, 15);
+    color: #fff;
+    border-radius: 10px;
+}
+.stopwatch {
+    padding: 20px 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.stopwatch span{
+   flex: 1;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+button{
+    margin: 30px 10px 10px 0;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+}
+.reset {
+    display: none;
+}
+.pay {
+    margin: 5px 0 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    background-color: green;
+    min-width: 60px;
+    min-height: 40px;
+}
+button:hover {
+    opacity: 0.7;
+}
+
+.cir{
+    width: 30px;
+    height: 30px;
+    border-width: 6px;
+    border-style: dotted;
+    border-color: rgb(248, 248, 252) blue; 
+    position: absolute;
+    left:15px;
+    top: 5px;
+    border-radius: 50%;
+    animation: circ 2s linear infinite;
+    transition: all 1s;   
+}
+.confirm {
+    margin: 0;
+    position: absolute;
+    top: -15%;
+    display: none;
+    width: 250px;
+    left: 50%;
+    padding: 20px 20px 70px;
+    transform:translateX(-50%)scale(0,0);
+    transition: all 1s;
+    animation: confirm 2s linear 0s forwards;
+}
+.okay {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+.rev {
+    top: 50%;
+    transform:translate(-50%, -50%) scale(1,1);
+    animation:  confirma 2s linear 0s forwards;
+}
+.confirm h3{
+    color: green;
+    margin: 20px 0;
+}
+.confirm p{
+    width: 100%;
+    line-height: 20px;
+    text-align: justify;
+}
+.span{
+    display: block;
+    padding: 20px 0 0;
+}
+@keyframes circ {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes confirm {
+   100%{
+    top: 50%;
+    transform:translate(-50%, -50%) scale(1,1);
+   }
+}
+@keyframes confirma {
+    100%{
+        top: 0%;
+        transform:translate(-50%, -50%) scale(0,0);
+       }
+ }
+@media screen and (max-width:250px){
+    body {
+        padding: 10px;
+    }
+    .confirm,.container {
+        width: 100%;
+    }
+}
